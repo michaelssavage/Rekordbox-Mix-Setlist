@@ -10,12 +10,18 @@ def main():
     try:
         updated_content = ""
 
-        for line in open(filename, 'r', encoding='utf-16'):
+        file = open(filename, 'r', encoding='utf-16')
+        fileInfo = file.readlines()
+        songInfo = fileInfo[0].strip().split("\t")
+        artist = songInfo.index("Artist")
+        track = songInfo.index('Track Title')
+
+        for line in fileInfo[1:]:
             songInfo = line.strip().split("\t")
-            song = f"{songInfo[3].strip()} - {songInfo[4].strip()}\n"
+            song = f"{songInfo[artist].strip()} - {songInfo[track].strip()}\n"
             updated_content += song
 
-        with open(filename,'w', encoding='utf-16') as file:
+        with open("_"+filename,'w', encoding='utf-16') as file:
             file.write(updated_content)
         print("File updated!")
 
@@ -29,6 +35,9 @@ def main():
     except IndexError:
         print("==========")
         print(f"'{f}' file format does not match Kuvo output. Did you export from Rekordbox properly?")
+    except ValueError as e:
+        print("==========")
+        print(f"{str(e)[:-8]} found. Is the Artist and Track Title visible?")
 
     k=input("press any button to exit.")
 
