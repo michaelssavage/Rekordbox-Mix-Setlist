@@ -31,6 +31,10 @@ Executable created using pyinstaller.
 
 <img src="img/example2.jpg" alt="example with .txt extension" width="500" />
 
+### 4. Enter 'y/ Y' to add the BPM to the output or 'n/ N' to ignore the BPM.
+
+<img src="img/choice.jpg" alt="add BPM or not." width="500" />
+
 ---
 
 # Errors
