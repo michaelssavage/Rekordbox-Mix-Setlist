@@ -1,10 +1,15 @@
 # Rekordbox-Mix-Setlist
+
+> [!NOTE]  
+> A copy-and-paste version is available on my site here: https://michaelsavage.ie/blog/pretty-text
+
+---
+
 Really simple executable used to get a setlist .txt file from Rekordbox.
 Executable created using pyinstaller.
 
 <img src="img/walkthrough.gif" alt="walkthrough gif" />
 
----
 
 # Steps
 
